@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 lines = {
-    (0, 0): (2, 3),
+    (0, 0) : (0, 0),
+    (1, 1): (2, 3),
     (2, 1): (5, 2),
     (3, 4): (5, 5),
     (3, 6): (5, 5)
@@ -13,12 +14,14 @@ lines = {
 v = 0.00874714
 
 blocked = [
-    [(2, 3), (5,2)],
-    [(5,2), (3,4)],
-    [(3, 6), (5, 2)]
+    # [(2, 3), (5,2)],
+    # [(5,2), (3,4)],
+    # [(3, 6), (5, 2)]
 ]
 
 all_points = [item for pair in lines.items() for item in pair]
+# all_points.append((0, 0))
+
 
 start_points = list(lines.keys())
 end_points = list(lines.values())
@@ -76,4 +79,13 @@ def nearest_neighbor(distances):
     route.append(0) # Return to city A
     return route
 
-print(nearest_neighbor(matrix))
+solution = nearest_neighbor(matrix)
+solution[-1] = 1
+
+solution = solution[1:]
+print(solution)
+
+print('Points in order:')
+
+for i in solution:
+    print(all_points[i])
