@@ -1,6 +1,7 @@
 import math
 from scipy.optimize import linear_sum_assignment
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 import numpy as np
 
 lines = {
@@ -14,9 +15,9 @@ lines = {
 v = 0.00874714
 
 blocked = [
-    # [(2, 3), (5,2)],
-    # [(5,2), (3,4)],
-    # [(3, 6), (5, 2)]
+    [(2, 3), (5,2)],
+    [(5,2), (3,4)],
+    [(3, 6), (5, 2)]
 ]
 
 all_points = [item for pair in lines.items() for item in pair]
@@ -89,3 +90,46 @@ print('Points in order:')
 
 for i in solution:
     print(all_points[i])
+
+wall = [
+    [(3.2, 2.2), (4.8, 2.8)]
+]
+
+# Extract x and y coordinates
+x_coords = [point[0] for point in all_points]
+y_coords = [point[1] for point in all_points]
+
+# Create a scatter plot
+fig, ax = plt.subplots()
+ax.scatter(x_coords, y_coords)
+
+# Add labels and title
+ax.set_xlabel('X Coordinate')
+ax.set_ylabel('Y Coordinate')
+ax.set_title('Scatter Plot of all_points')
+
+
+for line in wall:
+    x_values = [line[0][0], line[1][0]]
+    y_values = [line[0][1], line[1][1]]
+    plt.plot(x_values, y_values, 'r-')
+
+
+# Initialize a line object
+line, = ax.plot([], [], 'b-')
+
+# Function to update the plot
+def update(num, solution, all_points, line):
+    if num == 0:
+        return line,
+    x_values = [all_points[solution[i]][0] for i in range(num)]
+    y_values = [all_points[solution[i]][1] for i in range(num)]
+    line.set_data(x_values, y_values)
+    return line,
+
+ani = animation.FuncAnimation(fig, update, frames=len(solution)+1, fargs=(solution, all_points, line), interval=1000, repeat=False)
+
+# Display the plot
+plt.show()
+
+

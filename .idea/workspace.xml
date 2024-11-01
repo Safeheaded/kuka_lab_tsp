@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a5bd00-7fa5-4469-8664-5dcb282ce4c9" name="Changes" comment="minimum cost if current_point == comparing_point" />
+    <list default="true" id="e2a5bd00-7fa5-4469-8664-5dcb282ce4c9" name="Changes" comment="included (0, 0) coord and better points display">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730459101502</updated>
-      <workItem from="1730459102907" duration="16894000" />
+      <workItem from="1730459102907" duration="19115000" />
     </task>
     <task id="LOCAL-00001" summary="works">
       <option name="closed" value="true" />
@@ -103,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730485368608</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="included (0, 0) coord and better points display">
+      <option name="closed" value="true" />
+      <created>1730486692622</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730486692622</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,9 +124,10 @@
     <MESSAGE value="works" />
     <MESSAGE value="added requirements.txt" />
     <MESSAGE value="minimum cost if current_point == comparing_point" />
-    <option name="LAST_COMMIT_MESSAGE" value="minimum cost if current_point == comparing_point" />
+    <MESSAGE value="included (0, 0) coord and better points display" />
+    <option name="LAST_COMMIT_MESSAGE" value="included (0, 0) coord and better points display" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/kuka_traveling_salesman$main.coverage" NAME="main Coverage Results" MODIFIED="1730485055291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kuka_traveling_salesman$main.coverage" NAME="main Coverage Results" MODIFIED="1730487260263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
