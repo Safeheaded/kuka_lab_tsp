@@ -39,13 +39,16 @@ def generate_distances_matrix():
             times[i][j] = time
 
             if any(current_point == pair[0] and comparing_point == pair[1] for pair in blocked) or any(current_point == pair[1] and comparing_point == pair[0] for pair in blocked):
-                times[i][j] = 1000000000000000  # or any other value to indicate it's blocked
+                times[i][j] = float('inf')  # or any other value to indicate it's blocked
                 continue
 
-            # if i == j:
-            #     times[i][j] = 0
-            #     continue
-            if lines.get(current_point) and compare_points(comparing_point, lines.get(current_point)):
+            if i == j:
+                times[i][j] = 0
+                continue
+            elif current_point == comparing_point:
+                times[i][j] = 0.000000000001
+                continue
+            elif lines.get(current_point) and compare_points(comparing_point, lines.get(current_point)):
                 times[i][j] = 0.01
                 continue
             elif len(indices) > 0:
